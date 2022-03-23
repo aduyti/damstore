@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Product = (props) => {
+const Product = ({ product, clickHandler }) => {
     return (
         <div>
-            p {props.name}
+            {product.name}<button onClick={() => clickHandler(product.id)}>add</button>
         </div>
     );
 };

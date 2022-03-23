@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { addToDb } from '../../fakeData/fakeDB.js';
 import Product from '../Product/Product.js';
 
 
 const Products = () => {
-    addToDb(1);
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        fetch('products.json')
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, [])
+    const handelClick = id => addToDb(id);
+
     return (
         <div>
-            <Product name="na1" />
-            <Product name="n2" />
-            <Product name="n3" />
-            <Product name="n4" />
+            {
+                products.map(product => <Product product={product} key={product.id} clickHandler={handelClick} />)
+            }
         </div>
     );
 };
