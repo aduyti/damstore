@@ -14,16 +14,29 @@
 }
 
 .card-info {
-    padding: 14px;
+    padding: 0 14px;
     text-align: left;
 }
 
 .card-text {
     margin-top: 0;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .text-black {
     color: rgba(14, 22, 26, 1);
+}
 
+.text-gray {
+    font-size: 12px;
+    color: rgba(42, 65, 79, 1);
+
+}
+
+.card-btn {
+    width: 100%;
+    background-color: #FFE0B3;
+    border: 1px solid #95A0A7;
+    border-radius: 0px 0px 8px 8px;
+    height: 48px;
 }
