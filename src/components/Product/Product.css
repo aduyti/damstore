@@ -1,0 +1,29 @@
+.product-card {
+    border: 1px solid rgba(149, 160, 167, 1);
+    height: 508px;
+    width: 300px;
+    border-radius: 8px;
+}
+
+.card-img {
+    border-radius: 8px;
+    height: 286px;
+    width: 286px;
+    padding: 7px;
+    border-radius: 8px;
+}
+
+.card-info {
+    padding: 14px;
+    text-align: left;
+}
+
+.card-text {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.text-black {
+    color: rgba(14, 22, 26, 1);
+
+}

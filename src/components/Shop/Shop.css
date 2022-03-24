@@ -2,3 +2,7 @@
     display: grid;
     grid-template-columns: auto 264px;
 }
+
+.products {
+    font-weight: 400;
+}

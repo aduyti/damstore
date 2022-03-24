@@ -15,7 +15,7 @@ const Shop = () => {
 
     return (
         <div className="shop">
-            <div>
+            <div className="products">
                 {
                     products.map(product => <Product product={product} key={product.id} clickHandler={handelClick} />)
                 }
