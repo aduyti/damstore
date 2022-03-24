@@ -4,14 +4,14 @@ import Logo from '../../images/Logo.svg';
 
 const Header = () => {
     return (
-        <div className="header">
-            <div><a href="#home"><img src={Logo} alt="" /></a></div>
-            <div>
+        <nav className="header">
+            <a href="#home"><img src={Logo} alt="" /></a>
+            <div className="nav-links">
                 <a href="#order">Order</a>
                 <a href="#order-review">Order Review</a>
                 <a href="#inventory">Manage Inventory</a>
             </div>
-        </div>
+        </nav>
     );
 };
 
