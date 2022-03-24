@@ -4,5 +4,9 @@
 }
 
 .products {
+    margin: 120px 90px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px;
     font-weight: 400;
 }
