@@ -1,14 +1,15 @@
-const addToDb = id => {
-    const cart = JSON.parse(localStorage.getItem('shopping-cart')) || {};
-    if (cart[id]) {
+const addToDb = (id) => {
+    const cart = JSON.parse(localStorage.getItem('damstore-cart')) || {};
+    if (id in cart) {
         cart[id] += 1;
     }
     else {
         cart[id] = 1;
     }
-    localStorage.setItem('shopping-cart', JSON.stringify(cart));
+    localStorage.setItem('damstore-cart', JSON.stringify(cart));
+    return cart[id] === 1;
 }
 const getDbData = () => {
-    localStorage.getItem('shopping-cart');
+    localStorage.getItem('damstore-cart');
 }
 export { addToDb, getDbData }

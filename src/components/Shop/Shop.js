@@ -6,13 +6,26 @@ import './Shop.css'
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
+    const [cartItems, setCartItems] = useState([]);
     useEffect(() => {
         fetch('products.json')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
-    const handelClick = id => addToDb(id);
-
+    const handelClick = id => {
+        let newCart = [...cartItems];
+        if (addToDb(id)) {
+            const item = products.find(p => p.id === id);
+            item.quantity = 1;
+            newCart.push(item);
+        }
+        else {
+            newCart.forEach(item => {
+                if (item.id === id) item.quantity += 1;
+            });
+        }
+        setCartItems([...newCart]);
+    }
     return (
         <div className="shop">
             <div className="products">
@@ -20,7 +33,7 @@ const Shop = () => {
                     products.map(product => <Product product={product} key={product.id} clickHandler={handelClick} />)
                 }
             </div>
-            <Cart />
+            <Cart cartItems={cartItems} />
         </div>
     );
 };
