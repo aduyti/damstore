@@ -1,5 +1,5 @@
 const addToDb = (id) => {
-    const cart = JSON.parse(localStorage.getItem('damstore-cart')) || {};
+    const cart = getDbData() || {};
     if (id in cart) {
         cart[id] += 1;
     }
@@ -10,6 +10,6 @@ const addToDb = (id) => {
     return cart[id] === 1;
 }
 const getDbData = () => {
-    localStorage.getItem('damstore-cart');
+    return JSON.parse(localStorage.getItem('damstore-cart'));
 }
 export { addToDb, getDbData }
